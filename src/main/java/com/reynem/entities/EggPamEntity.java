@@ -1,7 +1,6 @@
 package com.reynem.entities;
 
 import com.reynem.ModItems;
-import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -17,12 +16,8 @@ public class EggPamEntity extends ThrownItemEntity {
         super(entityType, world);
     }
 
-    public EggPamEntity(EntityType<? extends ThrownItemEntity> entityType, LivingEntity livingEntity, World world) {
-        super(entityType, livingEntity, world);
-    }
-
-    public EggPamEntity(EntityType<? extends ThrownItemEntity> entityType, double d, double e, double f, World world) {
-        super(entityType, d, e, f, world);
+    public EggPamEntity(World world, LivingEntity owner) {
+        super(ModEntities.EGG_PAM_ENTITY, owner, world);
     }
 
     @Override
@@ -44,8 +39,6 @@ public class EggPamEntity extends ThrownItemEntity {
         super.onBlockHit(blockHitResult);
 
         if (!this.getWorld().isClient()){
-            BlockState hiState = this.getWorld().getBlockState(blockHitResult.getBlockPos());
-
             this.getWorld().setBlockState(blockHitResult.getBlockPos(), Blocks.GOLD_BLOCK.getDefaultState());
             this.getWorld().sendEntityStatus(this, (byte)3);
             this.discard();
