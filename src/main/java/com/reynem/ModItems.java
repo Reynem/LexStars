@@ -1,8 +1,8 @@
 package com.reynem;
 
+import com.reynem.weapons.RicoGun;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -22,6 +22,12 @@ public class ModItems {
     public static final Item RICO_EGG = register(
             "egg_rico",
             EggRicoItem::new,
+            new Item.Settings()
+    );
+
+    public static final Item RICO_GUN = register(
+            "rico_gun",
+            RicoGun::new,
             new Item.Settings()
     );
 
@@ -45,6 +51,9 @@ public class ModItems {
                     itemGroup.add(ModItems.PAM_EGG);
                     itemGroup.add(ModItems.RICO_EGG);
                 });
+
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
+                .register((itemGroup) -> itemGroup.add(ModItems.RICO_GUN));
     }
 
 }
