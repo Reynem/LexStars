@@ -1,11 +1,11 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "white",
-		"1": "black",
-		"2": "blue",
-		"3": "dulo",
-		"particle": "white"
+		"0": "lexstars:item/white",
+		"1": "lexstars:item/black",
+		"2": "lexstars:item/blue",
+		"3": "lexstars:item/dulo",
+		"particle": "lexstars:item/white"
 	},
 	"elements": [
 		{
