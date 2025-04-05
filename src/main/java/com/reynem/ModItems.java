@@ -1,5 +1,6 @@
 package com.reynem;
 
+import com.reynem.weapons.PamGun;
 import com.reynem.weapons.RicoGun;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
@@ -31,6 +32,12 @@ public class ModItems {
             new Item.Settings()
     );
 
+    public static final Item PAM_GUN = register(
+            "pam_gun",
+            PamGun::new,
+            new Item.Settings()
+    );
+
 
     public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
         // Create the item key.
@@ -53,7 +60,10 @@ public class ModItems {
                 });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
-                .register((itemGroup) -> itemGroup.add(ModItems.RICO_GUN));
+                .register((itemGroup) -> {
+                    itemGroup.add(ModItems.RICO_GUN);
+                    itemGroup.add(ModItems.PAM_GUN);
+                });
     }
 
 }
