@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " # ",
+        "#N#",
+        " # "
+    ],
+    "key": {
+        "#": {
+            "item": "lexstars:egg_rico"
+        },
+        "N": {
+            "item": "minecraft:netherite_sword"
+        }
+    },
+    "result": {
+        "id": "lexstars:rico_gun",
+        "count": 1
+    },
+    "group": "stuff"
+}

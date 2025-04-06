@@ -42,6 +42,7 @@ public class EggRicoItem extends Item {
         }
 
         world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.ENTITY_EGG_THROW, SoundCategory.PLAYERS, 0.5F, 0.4F / (world.getRandom().nextFloat() * 0.4F + 0.8F));
+        user.getItemCooldownManager().set(this, 150);
 
         return TypedActionResult.success(itemStack);
     }
