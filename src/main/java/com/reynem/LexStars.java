@@ -21,6 +21,7 @@ public class LexStars implements ModInitializer {
 		// Proceed with mild caution.
 		ModItems.initialize();
 		ModEntities.registerModEntities();
+		ModBlocks.initialize();
 		LOGGER.info("Hello Fabric world!");
 	}
 }
