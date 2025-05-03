@@ -38,6 +38,12 @@ public class ModItems {
             new Item.Settings()
     );
 
+    public static final Item POWER_ITEM = register(
+            "power_item",
+            PowerItem::new,
+            new Item.Settings()
+    );
+
 
     public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
         // Create the item key.
@@ -64,6 +70,9 @@ public class ModItems {
                     itemGroup.add(ModItems.RICO_GUN);
                     itemGroup.add(ModItems.PAM_GUN);
                 });
+
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.REDSTONE)
+                .register((itemGroup) -> itemGroup.add(ModItems.POWER_ITEM));
     }
 
 }

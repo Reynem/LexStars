@@ -20,7 +20,7 @@ public class ModBlocks {
     );
 
     public static final Block POWER_BOX = register(
-            new PowerBox(AbstractBlock.Settings.create().strength(4.0f).requiresTool()),
+            new PowerBox(AbstractBlock.Settings.create().strength(2.0f)),
             "power_box",
             true
             );
