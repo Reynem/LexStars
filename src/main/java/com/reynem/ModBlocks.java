@@ -1,6 +1,8 @@
 package com.reynem;
 
+import com.reynem.blocks.PowerBox;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
@@ -16,6 +18,13 @@ public class ModBlocks {
             "skibidi_block",
             true
     );
+
+    public static final Block POWER_BOX = register(
+            new PowerBox(AbstractBlock.Settings.create().strength(4.0f).requiresTool()),
+            "power_box",
+            true
+            );
+
 
     public static Block register(Block block, String name, boolean shouldRegisterItem) {
         // Register the block and its item.
@@ -33,7 +42,7 @@ public class ModBlocks {
 
     public static void initialize() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register((itemGroup) -> itemGroup.add(ModBlocks.SKIBIDI_BLOCK.asItem()));
-
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register((itemGroup) -> itemGroup.add(ModBlocks.POWER_BOX.asItem()));
     }
 
 }
