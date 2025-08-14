@@ -10,5 +10,6 @@ public class LexStarsClient implements ClientModInitializer {
 	public void onInitializeClient() {
 		EntityRendererRegistry.register(ModEntities.EGG_RICO_ENTITY, FlyingItemEntityRenderer::new);
 		EntityRendererRegistry.register(ModEntities.EGG_PAM_ENTITY, FlyingItemEntityRenderer::new);
+		EntityRendererRegistry.register(ModEntities.SGUSH_MOB_ENTITY, SgushMobRenderer::new);
 	}
 }
